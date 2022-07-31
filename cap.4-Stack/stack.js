@@ -54,9 +54,11 @@ class Stack {
 const stack = new Stack();
 stack.push(5);
 stack.push(8);
+stack.push(5);
+stack.push(8);
 
 // console.log(stack.pop());
-// console.log(stack);
+console.log(stack);
 //console.log(Object.getOwnPropertyNames(stack));
 //console.log(Object.keys(stack));
 //console.log(stack.items);

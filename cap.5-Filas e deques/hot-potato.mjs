@@ -1,6 +1,7 @@
 import Queue from "./filas-Queues.mjs";
 
-function hotPotato(elementsList, num) {
+export default 
+  function hotPotato(elementsList, num) {
   const queue = new Queue();
   const eliminatedList = [];
   for (let i = 0; i < elementsList.length; i++) {

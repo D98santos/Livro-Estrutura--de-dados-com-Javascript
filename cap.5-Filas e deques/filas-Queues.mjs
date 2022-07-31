@@ -56,16 +56,23 @@ export default class Queue {
 //-----------------------------------------------------------------------------------------------------------
 
 const queue = new Queue();
-//console.log(queue.isEmpty());
+console.log(queue.isEmpty());
 
-//queue.enqueue("Jhon");
-//queue.enqueue("Jack");
-//console.log(queue.toString());//Jhon, Jack
-//queue.enqueue("Camila");
-//console.log(queue.toString());///Jhon, Jack, Camila
-//console.log(queue.size());// 3
-//console.log(queue.isEmpty());//false
-//queue.dequeue();//remove 'Jhon'
-//queue.dequeue();// remove 'Jack'
-//console.log(queue.toString()); //Camila
-//console.log(queue);
+queue.enqueue("Jhon");
+queue.enqueue("Jack");
+
+console.log(queue.toString());//Jhon, Jack
+queue.enqueue("Camila");
+console.log(queue.peek())
+
+console.log(queue.toString());///Jhon, Jack, Camila
+console.log(queue.size());// 3
+queue.dequeue();//remove 'Jhon'
+console.log(queue.toString());///Jhon, Jack, Camila
+
+console.log(queue.lowestCount)
+
+queue.dequeue();// remove 'Jack'
+console.log(queue.toString()); //Camila
+console.log(queue)
+console.log(queue.peek())

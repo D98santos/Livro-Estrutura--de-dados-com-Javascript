@@ -127,18 +127,17 @@ export default class LinkedList {
     return objString; //5
   }
 }
-/*
+
 const list = new LinkedList();
 list.push(15);
 list.push(10);
-list.push(44);
+list.push("daniel");
 
 console.log(list);
-list.removeAt(0);
+//list.removeAt(0);
 //console.log(list);
 //list.insert(55, 0)
 console.log(list);
 
-console.log(list.indexOf(10));
+console.log(list.indexOf('daniel'));
 console.log(list.toString());
-*/

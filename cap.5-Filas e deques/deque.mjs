@@ -86,7 +86,7 @@ export default class Deque {
   }
 }
 //-------------------------------------------------------------------------------------------------------------
-/*
+
 const deque = new Deque();
 console.log(deque.isEmpty());
 
@@ -108,4 +108,3 @@ deque.removeBack(); /////remove o ultimo index Camila
 console.log(deque.toString());
 deque.addFront("Jhon");
 console.log(deque.toString());
-*/

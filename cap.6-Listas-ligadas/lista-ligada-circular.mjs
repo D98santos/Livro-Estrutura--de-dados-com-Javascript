@@ -69,4 +69,17 @@ export default class CircularLinkedList extends LinkedList {
         }
         return undefined;
     }
+
+    getElementAt(index) {
+        if (index >= 0 && index <= this.count) {
+          // 1
+          let node = this.head; // 2
+          for (let i = 0; i < index && node != null; i++) {
+            // 3
+            node = node.next;
+          }
+          return node; //4
+        }
+        return undefined; // 5
+      }
 }
