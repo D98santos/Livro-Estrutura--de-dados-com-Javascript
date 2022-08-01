@@ -128,16 +128,16 @@ export default class LinkedList {
   }
 }
 
-const list = new LinkedList();
-list.push(15);
-list.push(10);
-list.push("daniel");
+// const list = new LinkedList();
+// list.push(15);
+// list.push(10);
+// list.push("daniel");
 
-console.log(list);
-//list.removeAt(0);
-//console.log(list);
-//list.insert(55, 0)
-console.log(list);
+// console.log(list);
+// //list.removeAt(0);
+// //console.log(list);
+// //list.insert(55, 0)
+// console.log(list);
 
-console.log(list.indexOf('daniel'));
-console.log(list.toString());
+// console.log(list.indexOf('daniel'));
+// console.log(list.toString());
