@@ -99,10 +99,11 @@ class HashTableSepareteChaining {
     return objString;
   }
 }
-
+/*
 let a = new HashTableSepareteChaining();
 console.log(a.hashCode("a"));
 a.put('dan', 'san')
-a.remove('dan')
+//a.remove('dan')
 
 console.log(a.toString())
+*/
