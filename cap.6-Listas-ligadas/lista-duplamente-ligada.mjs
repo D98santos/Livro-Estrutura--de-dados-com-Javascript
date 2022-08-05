@@ -1,6 +1,6 @@
 import { defaultEquals } from "../util.mjs";
 import LinkedList from "./lista-ligada.mjs";
-import { DoublyNode } from "./models/linked-list-models.mjs";
+import { DoublyNode } from "../models/linked-list-models.mjs";
 
 export default class DoublyLinkedList extends LinkedList {
   //4
@@ -147,3 +147,5 @@ doubllylist.insert(44, 1);
 
 console.log(doubllylist);
 console.log(-1 <= 0);
+doubllylist.novo = 'kk'
+console.log(doubllylist.novo)
