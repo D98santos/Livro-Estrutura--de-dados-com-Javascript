@@ -55,7 +55,56 @@ export default class BinarySearchTree {
         }
     }
 
+    postOrderTraverse(callback){
+        this.postOrderTraverseNode(this.root, callback);
+    }
+    postOrderTraverseNode(node, callback){
+        if(node != null){
+            this.postOrderTraverseNode(node.left, callback);
+            this.postOrderTraverseNode(node.right, callback);
+            callback(node.key)
+        }
+    }
 
+    min(){
+        return this.minNode(this.root);
+    }
+    minNode(node){
+        let current = node;
+        while(current != null && current.left != null){
+            current = current.left;
+        }
+        return current;
+    }
+
+    max(){
+        return this.maxNode(this.root);
+    }
+    maxNode(node){
+        let current = node;
+        while(current != null && current.right != null){
+            current = current.right;
+        }
+        return current;
+    }
+
+    search(key){
+        return this.searchNode(this.root, key)
+    }
+    searchNode(node, key){
+        if(node == null){
+            return false;
+        }
+        if(this.compareFn(key, node.key) === Compare.LESS_THAN){
+            return this.searchNode(node.left, key);
+
+        }else if(this.compareFn(key, node.key) === Compare.BIGGER_THAN){
+            return this.searchNode(node.right, key)
+        }else{
+            return true;
+        }
+
+    }
 
 
 }
@@ -78,7 +127,11 @@ tree.insert(6)
 
 const printNode = (value) => console.log(value);
 tree.preOrderTraverse(printNode)
-//console.log(tree)
+
+
+console.log(tree.search(1) ? 'Key 1 found.' : 'Key 1 not found.')
+console.log(tree.search(8) ? 'Key 8 found.' : 'Key 8 not found.')
+
 
 
 
