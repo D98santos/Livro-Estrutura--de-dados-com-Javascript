@@ -23,7 +23,7 @@ export default class AVLTree extends BinarySearchTree{
         return Math.max(this.getNodeHeight(node.left), 
         this.getNodeHeight(node.right))+1
     }
-    getBalancedFactor(node){
+    getBalanceFactor(node){
         const heightDiference = this. getNodeHeight(node.left) - this.getNodeHeight(node.right);
         switch(heightDiference){
             case -2:
@@ -63,16 +63,53 @@ export default class AVLTree extends BinarySearchTree{
         return this.rotationRR(node)
     }
 
+    insert(key){
+        this.root = this.insertNode(this.root, key)
+    }
+    insertNode(node, key){
+        if(node == null){
+            return new Node(key)
+        } else if (this.compareFn(key, node.key) === Compare.LESS_THAN){
+            node.left = this.insertNode(node.left, key);
+        } else if (this.compareFn(key, node.key) === Compare.BIGGER_THAN){
+            node.right = this.insertNode(node.right, key)
+        } else {
+            return node;
+        }
+
+        const balanceFactor = this.getBalanceFactor(node);
+        if(balanceFactor === BalanceFactor.UNBALANCED_LEFT){
+            if(this.compareFn(key, node.left.key) === Compare.LESS_THAN){
+                node = this.rotationLL(node)
+            } else {
+                return this.rotationLR(node)
+            }
+        }
+        if(balanceFactor === BalanceFactor.UNBALANCED_RIGHT){
+            if(this.compareFn(key, node.right.key) === Compare.BIGGER_THAN){
+                node = this.rotationRR(node);
+            } else {
+                return this.rotationRL(node)
+            }
+        }
+        return node;
+    }
+
 
 
 }
 
-const avl = new AVLTree()
+const avl = new AVLTree();
+
+
 avl.insert(10)
+avl.insert(4);
 avl.insert(5)
-avl.insert(4)
 avl.insert(3)
 avl.insert(2)
+avl.insert(0)
+avl.insert(1)
 
-console.log(avl.getBalancedFactor(5))
+
+//console.log(avl.getBalanceFactor(3))
 console.log(avl)
